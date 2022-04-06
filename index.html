@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="обучение методологии БЭМ">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" crossorigin="use-credentials" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/style.min.css?_v=20220406094513">
+    <script>
+        function testWebP(callback) {
+            var webP = new Image();
+            webP.onload = webP.onerror = function () {
+                callback(webP.height == 2);
+            };
+            webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+        }
+        testWebP(function (support) {
+            if (support == true) {
+                document.documentElement.classList.add('webp');
+            } else {
+                document.documentElement.classList.add('no-webp');
+            }
+        });
+    </script>
+    <title>space title</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header lock-padding">
+    <div class="header__container">
+        <div class="wrapper-inner--small">
+            <div class="header__navigation">
+                <div class="header__logo logo">
+                    <a href="#" class="header__logo-link">
+                        <img src="img/logo/logo.svg" alt="logo">
+                        <div class="header__logo-text">Профессиональный <br> астролог</div>
+                    </a>
+                </div>
+                <nav class="menu__body">
+                    <div class="menu__nav-list">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="#" class="menu__link menu__link--active">
+                                    главная
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">
+                                    услуги
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">
+                                    статьи
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">
+                                    контакты
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <div class="menu__button">
+                                    <a href="#popup_ask" class="btn btn--white">Задать вопрос</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="menu-social-cont">
+                    <div class="menu-social ">
+                        <ul class="menu-social__list">
+                            <li class="menu-social__item">
+                                <a href="#" class="menu-social__link" aria-label="Переход в вотсапп">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                                        <path
+                                            d="M3198.45 2125.77s4.12 2 6.55 2a11.77 11.77 0 1 0-11.77-11.77c0 2.49 2.1 6.7 2.1 6.7l-1.65 4.62Zm5.27-12.83c-.04-.2-1.66-2.46-1.75-2.57s-2.41.7-2.59 2.08 1.03 3.62 2.35 5.24 4.42 3.82 6.05 3.95 3.17-2.04 3.33-2.32-2.5-2-2.8-2.07-1.3.96-1.55 1.05-1.22-.25-2.47-1.36a4.648 4.648 0 0 1-1.59-2.68c.02-.26 1.07-1.11 1.02-1.32Z"
+                                            transform="translate(-3192.56 -2103.72)"
+                                            style="fill:none;stroke-width:1px;fill-rule:evenodd" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="menu-social__item">
+                                <a href="#" class="menu-social__link" aria-label="Переход в инстаграмм">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                                        <path
+                                            d="M3196.23 2143.23h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4h-16a4 4 0 0 1-4-4v-16a4 4 0 0 1 4-4Zm8 5.5a6.505 6.505 0 1 1-6.5 6.5 6.5 6.5 0 0 1 6.5-6.5Zm7-1.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"
+                                            transform="translate(-3191.72 -2142.72)"
+                                            style="fill:none;stroke-width:1px;fill-rule:evenodd" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="munu-cont">
+                        <ul class="munu-cont__list">
+                            <li class="munu-cont__item">
+                                <a href="tel:000000000" class="munu-cont__link" aria-label="Сделать звонок">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29.76" height="22.68">
+                                        <path
+                                            d="M3249.71 2114.26s2.16-3.93 2.18-4.01-5.48-3.97-5.84-4.09-3.82 4.44-3.93 5.02.97 2.77 1.8 3.91 2.72 4.49 10.52 9.33 12.73 3.21 13.25 2.87 3.32-5.29 3.19-5.7-5.48-3.26-6.24-3.42-1.71 2.81-2.91 3.32-3.12.4-6.73-1.84a16.063 16.063 0 0 1-5.29-5.39Z"
+                                            transform="translate(-3241.62 -2105.66)"
+                                            style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px;fill-rule:evenodd" />
+                                    </svg>
+                                    <span>8 (900) 000 00 00</span>
+                                </a>
+                            </li>
+                            <li class="munu-cont__item">
+                                <a href="mailto:youtphone@mail.ru" class="munu-cont__link" aria-label="Отправить почту">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28.62" height="20.68">
+                                        <path data-name="Прямоугольник, скругл. углы 3"
+                                            d="M3267.71 2167.84h-23.42a2.078 2.078 0 0 1-2.09-2.07v-15.54a2.078 2.078 0 0 1 2.09-2.07h23.42a2.078 2.078 0 0 1 2.09 2.07v15.54a2.078 2.078 0 0 1-2.09 2.07Zm-.2-17.4-11.56 9.78-11.51-9.68-.41.89 11.94 10.03.09-.11 11.86-10.02Z"
+                                            transform="translate(-3241.69 -2147.66)"
+                                            style="fill:none;stroke-linecap:round;stroke-width:1px;fill-rule:evenodd" />
+                                    </svg>
+                                    <span>youtphone@mail.ru</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu__button">
+                    <a href="#popup_ask" class="btn btn--white popup-link">Задать вопрос</a>
+                </div>
+
+                <div class="header-burger">
+                    <div class="header-burger__column">
+                        <div class="header-burger__text">Меню</div>
+                        <div class="menu__icon"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <section class="astrolog">
+    <div class="astrolog__body lock-padding">
+        <div class="astrolog__container">
+            <div class="wrapper-inner">
+                <h1 class="astrolog__title">Как консультация астролога&nbsp;может <br> изменить Вашу жизнь
+                    раз&nbsp;и&nbsp;навсегда
+                </h1>
+                <div class="astrolog__sub-list sub-list">
+                    <div class="sub-list__title">
+                        Консультации:
+                    </div>
+                    <ul class="sub-list__astrolog">
+                        <li class="sub-list__item">Астролога</li>
+                        <li class="sub-list__item">Таролога</li>
+                        <li class="sub-list__item">Психолога</li>
+                    </ul>
+                </div>
+                <div class="astrolog-bulets">
+                    <div class="astrolog-bulets__item bulet">
+                        <div class="bulet__img">
+                            <img src="img/icon/bulet_healt.svg" alt="Здоровье">
+                        </div>
+                        <div class="bulet__title">
+                            здоровье, <br> семья, дети
+                        </div>
+                    </div>
+                    <div class="astrolog-bulets__item bulet">
+                        <div class="bulet__img">
+                            <img src="img/icon/bulet_your_way.svg" alt="Пркдназначение">
+                        </div>
+                        <div class="bulet__title">
+                            какое ваше <br> предназначение
+                        </div>
+                    </div>
+                    <div class="astrolog-bulets__item bulet">
+                        <div class="bulet__img">
+                            <img src="img/icon/bulet_balans.svg" alt="Духовное и материальное">
+                        </div>
+                        <div class="bulet__title">
+                            баланс духовного <br> и материального
+                        </div>
+                    </div>
+                </div>
+                <div class="astrolog-btn">
+                    <a href="#popup_cosult" class="btn btn--yellow popup-link">
+                        Заказать консультацию
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="astrolog__images images-astrolog ">
+            <div class="images-astrolog__item">
+                <div class="images-astrolog__bg "><span></span></div>
+            </div>
+            <div class="images-astrolog__item ">
+                <div class="images-astrolog__far "><span></span></div>
+            </div>
+            <div class="images-astrolog__item">
+                <div class="images-astrolog__medium "><span></span></div>
+            </div>
+            <div class="images-astrolog__item">
+                <div class="images-astrolog__near"><span></span></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<div class="gradient__bottom">
+    <div class="gradient__bottom-body"></div>
+</div>
+        <main class="main astrolog__scroll">
+            <section class="consult ">
+    <div class="consult__container">
+        <div class="wrapper-inner">
+            <h2 class="consult__section-title section-title section-title--white">
+                Консультация будет полезна
+            </h2>
+            <div class="consult__row">
+                <div class="consult__column">
+                    <div class="consult__list">
+                        <ul>
+                            <li class="consult__list-item consult__list-item--check">
+                                Вам необходимо сделать выбор
+                            </li>
+                            <li class="consult__list-item consult__list-item--check">
+                                Отношения зашли в тупик
+                            </li>
+                            <li class="consult__list-item consult__list-item--check">
+                                Преследуют неудачи
+                            </li>
+                            <li class="consult__list-item consult__list-item--check">
+                                Хотите добиться большего в жизни
+                            </li>
+                            <li class="consult__list-item consult__list-item--cross">
+                                Покупка акций, лотереи
+                            </li>
+                            <li class="consult__list-item consult__list-item--cross">
+                                Необходимо выбрать институт
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="consult__column">
+                    <div class="consult__content">
+                        <div class="consult__content-text">
+                            Астрология не дает точных ответов, но может указать наилучшие направление в котором шанс
+                            добиться успеха наибольший
+                        </div>
+                        <div class="consult__content-img">
+                            <img src="img/image/sun_sestem.svg" alt="солнечная система">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="horoscope">
+    <div class="horoscope__container">
+        <div class="wrapper-inner">
+            <h2 class="hotoscope__title section-title section-title--white">
+                Быстрый гороскоп
+            </h2>
+            <div class="horoscope__content">
+                <div class="horoscope__img-center">
+                    <span></span>
+                </div>
+                <div class="horoscope__items">
+                    <div class="horoscope__row horoscope__row--short">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_10" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_10.svg" alt="знак зодиака Рыбы">
+                                </div>
+                                <div class="item-horoscope__text">Рыбы</div>
+                                <div class="item-horoscope__date">19.02 — 20.03</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_3" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_3.svg" alt="знак зодиака Овен">
+                                </div>
+                                <div class="item-horoscope__text">Овен</div>
+                                <div class="item-horoscope__date">21.03 — 19.04</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="horoscope__row horoscope__row--middle horoscope__row--to-top">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_7" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_7.svg" alt="знак зодиака Водолей">
+                                </div>
+                                <div class="item-horoscope__text">Водолей</div>
+                                <div class="item-horoscope__date">20.01 — 18.02</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_6" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_6.svg" alt="знак зодиака Телец">
+                                </div>
+                                <div class="item-horoscope__text">Телец</div>
+                                <div class="item-horoscope__date">20.04 — 20.05</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="horoscope__row horoscope__row--long horoscope__row--to-top">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_4" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_4.svg" alt="знак зодиака Козерог">
+                                </div>
+                                <div class="item-horoscope__text">Козерог</div>
+                                <div class="item-horoscope__date">22.12 — 19.01</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_9" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_9.svg" alt="знак зодиака Близнецы">
+                                </div>
+                                <div class="item-horoscope__text">Близнецы</div>
+                                <div class="item-horoscope__date">21.05 — 20.06</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="horoscope__items">
+                    <div class="horoscope__row horoscope__row--long">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_12" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_12.svg" alt="знак зодиака Рак">
+                                </div>
+                                <div class="item-horoscope__text">Рак</div>
+                                <div class="item-horoscope__date">21.06 — 22.07</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_1" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_1.svg" alt="знак зодиака Стрелец">
+                                </div>
+                                <div class="item-horoscope__text">Стрелец</div>
+                                <div class="item-horoscope__date">22.11 — 21.12</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="horoscope__row horoscope__row--middle horoscope__row--to-top">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_2" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_2.svg" alt="знак зодиака Лев">
+                                </div>
+                                <div class="item-horoscope__text">Лев</div>
+                                <div class="item-horoscope__date">23.07 — 22.08</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_11" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_11.svg" alt="знак зодиака Скорпион">
+                                </div>
+                                <div class="item-horoscope__text">Скорпион</div>
+                                <div class="item-horoscope__date">23.10 — 21.11</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="horoscope__row horoscope__row--short horoscope__row--to-top">
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_5" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_5.svg" alt="знак зодиака Дева">
+                                </div>
+                                <div class="item-horoscope__text">Дева</div>
+                                <div class="item-horoscope__date">23.08 — 22.09</div>
+                            </a>
+                        </div>
+                        <div class="horoscope__column item-horoscope">
+                            <a href="#popup_8" class="popup-link">
+                                <div class="item-horoscope__image">
+                                    <img src="img/bg/horosc/horosc_8.svg" alt="знак зодиака Весы">
+                                </div>
+                                <div class="item-horoscope__text">Весы</div>
+                                <div class="item-horoscope__date">23.09 — 22.10</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="question">
+    <div class="question__container--small">
+        <div class="wrapper-inner">
+            <h2 class="question__title section-title section-title--white">
+                Консультация раскроет следующие вопросы:
+            </h2>
+            <div class="question__body">
+                <div class="question__row">
+                    <div class="question__column--left">
+                        <div class="question__list">
+                            <div class="question__item">
+                                <div data-spoller='spoller-1' class="question__spoller question__spoller--active">
+                                    НОТАЛЬНАЯ КАРТА</div>
+                            </div>
+                            <div class="question__item">
+                                <div data-spoller='spoller-2' class="question__spoller">ЛИЧНЫЙ ГОРОСКОП
+                                </div>
+                            </div>
+                            <div class="question__item">
+                                <div data-spoller='spoller-3' class="question__spoller">
+                                    ИНДИВИДУАЛЬНАЯ КОНСУЛЬТАЦИЯ</div>
+                            </div>
+                            <div class="question__item">
+                                <div data-spoller='spoller-4' class="question__spoller">
+                                    КАКАЯ ТО ЕЩЕ УСЛУГА АСТРОЛОГА
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="question__column--right">
+                        <div class="question__content">
+                            <div data-spoller_text='spoller-1' class="question__text question__text--active">
+                                <ul class="question__text-items">
+                                    <li class="question__text-item">
+                                        - spoller-1
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+                                        раскроет ваши сильные и слабые стороны
+
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-spoller_text='spoller-2' class="question__text">
+                                <ul class="question__text-items">
+                                    <li class="question__text-item">
+                                        - spoller-2
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-spoller_text='spoller-3' class="question__text">
+                                <ul class="question__text-items">
+                                    <li class="question__text-item">
+                                        - spoller-3
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-spoller_text='spoller-4' class="question__text">
+                                <ul class="question__text-items">
+                                    <li class="question__text-item">
+                                        - spoller-4
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                    <li class="question__text-item">
+                                        - раскроет ваши сильные и слабые стороны
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="question__contract">
+                            Консультации проводятся индивидуально с Пн по Сб с 10:00 по 21:00 онлайн или в
+                            переписке. Перенд началом консультации вы должны знать ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                        </div>
+                    </div>
+                </div>
+                <div class="question__buttons">
+                    <div class="question__button">
+                        <a href="#popup_catalog" class="question__btn btn btn--yellow">перейти в каталог</a>
+                    </div>
+                    <div class="question__button">
+                        <div class="question__butoon--white">
+                            <a href="#popup_download" class="question__btn btn btn--white">скачать каталог
+                                <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="about">
+    <div class="container">
+        <div class="wrapper-inner">
+            <h2 class="about__title section-title section-title--darck">
+                Давайте знакомится
+            </h2>
+            <div class="about__body">
+                <div class="about__row">
+                    <div class="about__column--left">
+                        <div class="about__photos">
+                            <div class="about__photo">
+                                <picture><source srcset="img/content/gerl1.webp" type="image/webp"><img src="img/content/gerl1.png" alt="фото астролога" class="photo-astr"></picture>
+                            </div>
+                            <div class="about__photo-deco">
+                                <picture><source srcset="img/content/sheets.webp" type="image/webp"><img src="img/content/sheets.png" alt="декор" class="photo-decor"></picture>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__column--right">
+                        <div class="about__text">
+                            <p>
+                                Профессиональный практикующий астролог Васильева Елена Дмитриевна, более 3 лет помогаю
+                                людям
+                                по всему миру.
+                            </p>
+                            <p>
+                                Закончила Высшую школу астрологии г. Иркутск, постоянно повышаю свою квалификацию,
+                                состою в
+                                астрологическом сообществе города Иркутска, веду свой блог.
+                            </p>
+                            <p>
+                                В своей работе использую класические методы астрологии, основаные на многолетнем опыте
+                                астрологов города Иркутска.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <div class="about__bulet">
+                            <ul>
+                                <li class="about__bulet-item">
+                                    - работаю по договору
+                                </li>
+                                <li class="about__bulet-item">
+                                    - конфеденциальность гарантируется
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="example">
+    <div class="example__container--extra-small">
+        <div class="wrapper-inner">
+            <h2 class="example__title section-title section-title--darck">Примеры успеха и отзывы</h2>
+            <div class="example__content">
+                <div class="example__slidet-content ">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl1.webp" type="image/webp"><img src="img/content/gerl1.png" alt="gerl1"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">1Алена, 19 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl2"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">2Алена, 29 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl3"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">3Алена, 39 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl3"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">4Алена, 39 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl3"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">5Алена, 39 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl3"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">6Алена, 39 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+                <div class="example__slidet-content">
+                    <div class="example__content-photo">
+                        <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl3"></picture>
+                    </div>
+                    <div class="example__content-text">
+                        <div class="example__name">7Алена, 39 лет, Москва</div>
+                        <div class="example__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="example__slider-trigger">
+                <div class="example__slider-tigger-body">
+                    <div class="example__slider-arrow example__slider-arrow--left">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px"
+                            height="36px">
+                            <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                                fill="none"
+                                d="M19.416,33.007 L18.934,33.455 L2.584,18.224 L2.825,18.000 L2.584,17.776 L18.934,2.545 L19.416,2.993 L3.307,18.000 L19.416,33.007 Z" />
+                        </svg>
+                    </div>
+                    <div class="example__trigger-tree">
+                        <div class="example__trigger-items">
+                            <div class="example__trigger-tree-item">
+                                <div class="example__slider-trigger-img ">
+                                    <picture><source srcset="img/content/gerl1.webp" type="image/webp"><img src="img/content/gerl1.png" alt="gerl1"></picture>
+                                </div>
+                                <div class="example__slider-trigger-img">
+                                    <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl2"></picture>
+                                </div>
+                                <div class="example__slider-trigger-img">
+                                    <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl3"></picture>
+                                </div>
+                            </div>
+                            <div class="example__trigger-tree-item">
+                                <div class="example__slider-trigger-img ">
+                                    <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl1"></picture>
+                                </div>
+                                <div class="example__slider-trigger-img">
+                                    <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl2"></picture>
+                                </div>
+                                <div class="example__slider-trigger-img">
+                                    <picture><source srcset="img/content/gerl2.webp" type="image/webp"><img src="img/content/gerl2.png" alt="gerl3"></picture>
+                                </div>
+                            </div>
+                            <div class="example__trigger-tree-item">
+                                <div class="example__slider-trigger-img">
+                                    <picture><source srcset="img/content/gerl3.webp" type="image/webp"><img src="img/content/gerl3.png" alt="gerl3"></picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example__slider-arrow example__slider-arrow--right">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px"
+                            height="36px">
+                            <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                                fill="none"
+                                d="M19.522,18.227 L2.965,33.628 L2.478,33.174 L18.791,18.000 L2.478,2.826 L2.965,2.372 L19.522,17.773 L19.279,18.000 L19.522,18.227 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="my-article">
+    <div class="my-article__container--extra-small">
+        <div class="wrapper-inner">
+            <h2 class="my-article__title section-title section-title--dark">
+                Интересные статьи
+            </h2>
+            <div class="my-article__body">
+                <div class="my-article__row">
+                    <div class="my-article__column my-article__column-left">
+                        <picture><source srcset="img/content/article1.webp" type="image/webp"><img src="img/content/article1.png" alt="Изображение к статье зодиак"></picture>
+                    </div>
+                    <div class="my-article__column my-article__column-center">
+                        <div class="my-article__sub-title">
+                            <h3>История астрологии</h3>
+                        </div>
+                        <div class="my-article__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip...
+                        </div>
+                        <div class="my-article__link-article-title">
+                            <a href="#" class="link-onward">
+                                Читать далее
+                            </a>
+                        </div>
+                    </div>
+                    <div class="my-article__column my-article__column-right">
+                        <div class="my-article__sub-article">
+                            <a href="#" aria-label="Переход к первой статье в архиве">
+                                <picture><source srcset="img/content/article2.webp" type="image/webp"><img src="img/content/article2.png" alt="картинка статьи"></picture>
+                            </a>
+                        </div>
+                        <div class="my-article__sub-article">
+                            <a href="#" aria-label="Переход ко второй статье в архиве">
+                                <picture><source srcset="img/content/article3.webp" type="image/webp"><img src="img/content/article3.png" alt="картинка статьи"></picture>
+                            </a>
+                        </div>
+                        <div class="my-article__all-article">
+                            <a href="#" class="my-article__all-link" aria-label="Переход к статьям в архиве">
+                                Все статьи
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="contact">
+    <div class="contact__container--extra-small">
+        <div class="wrapper-inner">
+            <h2 class="contact__title section-title section-title--white">
+                Контакты
+            </h2>
+            <div class="contact__body">
+                <div class="contact__row">
+                    <div class="contact__column">
+                        <div class="contact__place">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.76" height="22.68">
+                                <path
+                                    d="M3249.71 2114.26s2.16-3.93 2.18-4.01-5.48-3.97-5.84-4.09-3.82 4.44-3.93 5.02.97 2.77 1.8 3.91 2.72 4.49 10.52 9.33 12.73 3.21 13.25 2.87 3.32-5.29 3.19-5.7-5.48-3.26-6.24-3.42-1.71 2.81-2.91 3.32-3.12.4-6.73-1.84a16.063 16.063 0 0 1-5.29-5.39Z"
+                                    transform="translate(-3241.62 -2105.66)"
+                                    style="fill:none;stroke:#eef;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px;fill-rule:evenodd" />
+                            </svg>
+                            <span>8-000-000-00-00</span>
+                        </div>
+                        <div class="contact__place">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28.62" height="20.68">
+                                <path data-name="Прямоугольник, скругл. углы 3"
+                                    d="M3267.71 2167.84h-23.42a2.078 2.078 0 0 1-2.09-2.07v-15.54a2.078 2.078 0 0 1 2.09-2.07h23.42a2.078 2.078 0 0 1 2.09 2.07v15.54a2.078 2.078 0 0 1-2.09 2.07Zm-.2-17.4-11.56 9.78-11.51-9.68-.41.89 11.94 10.03.09-.11 11.86-10.02Z"
+                                    transform="translate(-3241.69 -2147.66)"
+                                    style="fill:none;stroke:#eef;stroke-linecap:round;stroke-width:1px;fill-rule:evenodd" />
+                            </svg>
+                            <span>my_mail@mail.ru</span>
+                        </div>
+                        <div class="contact__place">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="27.06">
+                                <path data-name="Эллипс 634"
+                                    d="M2600 7262c0-10.2-8.07-9-8.07-9s-7.93-1.35-7.93 9c0 10.15 7.93 17 7.93 17s8.07-7.3 8.07-17Zm-8-4a4 4 0 1 1-4 4 4 4 0 0 1 4-4Z"
+                                    transform="translate(-2583.5 -7252.44)"
+                                    style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px;fill-rule:evenodd" />
+                            </svg>
+                            <span>г. Иркутск</span>
+                        </div>
+                        <div class="contact__place">
+                            <a href="#" class="menu-social__link contact__social-item" aria-label="Переход в вотсапп">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                                    <path
+                                        d="M3198.45 2125.77s4.12 2 6.55 2a11.77 11.77 0 1 0-11.77-11.77c0 2.49 2.1 6.7 2.1 6.7l-1.65 4.62Zm5.27-12.83c-.04-.2-1.66-2.46-1.75-2.57s-2.41.7-2.59 2.08 1.03 3.62 2.35 5.24 4.42 3.82 6.05 3.95 3.17-2.04 3.33-2.32-2.5-2-2.8-2.07-1.3.96-1.55 1.05-1.22-.25-2.47-1.36a4.648 4.648 0 0 1-1.59-2.68c.02-.26 1.07-1.11 1.02-1.32Z"
+                                        transform="translate(-3192.56 -2103.72)"
+                                        style="fill:none;stroke-width:1px;fill-rule:evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="menu-social__link contact__social-item"
+                                aria-label="Переход в инстаграмм">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                                    <path
+                                        d="M3196.23 2143.23h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4h-16a4 4 0 0 1-4-4v-16a4 4 0 0 1 4-4Zm8 5.5a6.505 6.505 0 1 1-6.5 6.5 6.5 6.5 0 0 1 6.5-6.5Zm7-1.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"
+                                        transform="translate(-3191.72 -2142.72)"
+                                        style="fill:none;stroke-width:1px;fill-rule:evenodd" />
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="contact__column">
+                        <div class="contact__requisit">
+                            Реквизиты
+                        </div>
+                        <div class="contact__requisit">
+                            ИНН 000000000 <br> ОГРНИП 00000000
+                        </div>
+                        <div class="contact__requisit">
+
+                            Расчетный счет <br> 000000000000000000
+                        </div>
+                        <div class="contact__requisit">
+                            БИК 0000000000
+                        </div>
+                        <div class="contact__requisit">
+                            Банк <br>БАЙКАЛЬСКИЙ БАНК
+                        </div>
+                        <div class="contact__requisit">
+                            ПАО СБЕРБАНК
+                        </div>
+                        <div class="contact__requisit">
+                            Кор.счет <br>000000000000000
+                        </div>
+                    </div>
+                    <div class="contact__column">
+                        <div class="contact__back-link">
+                            <form action="#" method="get" class="contact__form form" autocomplete="off">
+                                <div class="contact__form-title form__title form__title--white">
+                                    Остались вопросы напишите
+                                </div>
+                                <div class="contact__form-name form__name">
+                                    <label for="input_text_1" class="contact__label form__label">Имя</label>
+                                    <input type="text" name="contact-name" id="input_text_1" maxlength="64">
+                                </div>
+                                <div class="contact__form-email form__email">
+                                    <label for="input_email_2" class="contact__label form__label">Почта</label>
+                                    <input type="email" name="contact-email" id="input_email_2" maxlength="64">
+
+                                </div>
+                                <div class="contact__form-text form__text">
+                                    <label for="input_text_3" class="contact__label form__label">Текст сообщения</label>
+                                    <textarea name="contact-text" id="input_text_3" maxlength="254"></textarea>
+
+                                </div>
+                                <div class="contact__form-submit form__submit">
+                                    <input type="reset" value="сбросить">
+                                </div>
+                                <div class="contact__form-submit form__submit">
+                                    <input type="submit" value="отправить">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </main>
+        <footer class="footer astrolog__scroll">
+    <div class="footer__container--extra-small">
+        <div class="wrapper-inner--small">
+            <div class="footer__body">
+                <div class="footer__row">
+                    <div class="footer__column footer__column--left">
+                        <ul>
+                            <li class="footer__link">
+                                <a href="#">Главная</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Виды консультаций</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Статьи</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column  footer__column--right">
+                        <div class="footer__text">
+                            Все материалы на сайте уникальны, их размещение на других ресурсах
+                            разрешено только с активной ссылкой на первоисточник
+                        </div>
+                        <div class="footer__card">
+                            <div class="card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="103.24" height="53">
+                                    <path data-name="Прямоугольник 6"
+                                        d="M2921.37 7560.5h92.25a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5h-92.25a5 5 0 0 1-5-5v-42a5 5 0 0 1 5-5Z"
+                                        transform="translate(-2915.88 -7560)"
+                                        style="fill:#eef;stroke:#000;stroke-width:1px;fill-rule:evenodd" />
+                                    <circle data-name="Эллипс 4 копия" cx="64.62" cy="27.5" r="17.5"
+                                        style="fill:#626262" />
+                                    <circle data-name="Эллипс 4" cx="36.62" cy="27.5" r="17.5" style="fill:#959595" />
+                                </svg>
+                            </div>
+                            <div class="card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="103.24" height="53">
+                                    <path data-name="Прямоугольник 6 копия"
+                                        d="M3031.37 7560.5h92.25a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5h-92.25a5 5 0 0 1-5-5v-42a5 5 0 0 1 5-5Z"
+                                        transform="translate(-3025.88 -7560)"
+                                        style="fill:#eef;stroke:#000;stroke-width:1px;fill-rule:evenodd" /><text
+                                        x="23.344" y="34.318" style="font-size:30px;font-family:Roboto">мир</text>
+                                </svg>
+                            </div>
+                            <div class="card">
+                                <svg data-name="Группа 48" xmlns="http://www.w3.org/2000/svg" width="103.24"
+                                    height="53">
+                                    <path data-name="Прямоугольник 6 копия 2"
+                                        d="M3142.37 7560.5h92.25a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5h-92.25a5 5 0 0 1-5-5v-42a5 5 0 0 1 5-5Z"
+                                        transform="translate(-3136.88 -7560)"
+                                        style="fill:#eef;stroke:#000;stroke-width:1px;fill-rule:evenodd" /><text
+                                        x="23.345" y="34.318" style="font-size:18px;font-family:Roboto">PayPal</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="footer__copy-write">&copy; Все права защищены https://webway38.ru</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <div class="poppp lock-margin">
+    <div id="popup_ask" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_ask</div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_cosult" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_cosult</div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <!-- ================================ -->
+    <div id="popup_10" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_10 Рыбы</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_10.svg" alt="знак зодиака Рыбы">
+                    </div>
+                    <div class="item-horoscope__text">Рыбы</div>
+                    <div class="item-horoscope__date">19.02 — 20.03</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_3" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_3 Овен</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_3.svg" alt="знак зодиака Овен">
+                    </div>
+                    <div class="item-horoscope__text">Овен</div>
+                    <div class="item-horoscope__date">21.03 — 19.04</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_7" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_7 Водолей</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_7.svg" alt="знак зодиака Водолей">
+                    </div>
+                    <div class="item-horoscope__text">Водолей</div>
+                    <div class="item-horoscope__date">20.01 — 18.02</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_6" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_6 Телец</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_6.svg" alt="знак зодиака Телец">
+                    </div>
+                    <div class="item-horoscope__text">Телец</div>
+                    <div class="item-horoscope__date">20.04 — 20.05</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_4" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_4 Козерог</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_4.svg" alt="знак зодиака Козерог">
+                    </div>
+                    <div class="item-horoscope__text">Козерог</div>
+                    <div class="item-horoscope__date">22.12 — 19.01</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_9" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_9 Близнецы</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_9.svg" alt="знак зодиака Близнецы">
+                    </div>
+                    <div class="item-horoscope__text">Близнецы</div>
+                    <div class="item-horoscope__date">21.05 — 20.06</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_12" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_12 Рак</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_12.svg" alt="знак зодиака Рак">
+                    </div>
+                    <div class="item-horoscope__text">Рак</div>
+                    <div class="item-horoscope__date">21.06 — 22.07</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_1" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_1 Стрелец</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_1.svg" alt="знак зодиака Стрелец">
+                    </div>
+                    <div class="item-horoscope__text">Стрелец</div>
+                    <div class="item-horoscope__date">22.11 — 21.12</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_2" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_2 Лев</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_2.svg" alt="знак зодиака Лев">
+                    </div>
+                    <div class="item-horoscope__text">Лев</div>
+                    <div class="item-horoscope__date">23.07 — 22.08</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_11" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_11 Скорпион</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_11.svg" alt="знак зодиака Скорпион">
+                    </div>
+                    <div class="item-horoscope__text">Скорпион</div>
+                    <div class="item-horoscope__date">23.10 — 21.11</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_5" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_5 Дева</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_5.svg" alt="знак зодиака Дева">
+                    </div>
+                    <div class="item-horoscope__text">Дева</div>
+                    <div class="item-horoscope__date">23.08 — 22.09</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_8" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">popup_8 Весы</div>
+                <div class="horoscope__column item-horoscope">
+                    <div class="item-horoscope__image">
+                        <img src="img/bg/horosc/horosc_8.svg" alt="знак зодиака Весы">
+                    </div>
+                    <div class="item-horoscope__text">Весы</div>
+                    <div class="item-horoscope__date">23.09 — 22.10</div>
+                </div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================ -->
+
+
+    <div id="popup" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">modal window popup_1</div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_2" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close popup__close--ative"><span></span></a>
+                <div class="popup__title">modal window popup_2</div>
+                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                    non commodi minus sint odit ducimus quos amet.</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="js/app.min.js?_v=20220406094513"></script>
+</body>
+
+</html>
