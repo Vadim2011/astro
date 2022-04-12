@@ -13,9 +13,9 @@
     <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()" /> -->
 
-    <link rel="stylesheet" href="css/style.min.css?_v=20220407001150">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220413014001">
     <script>
         function testWebP(callback) {
             var webP = new Image();
@@ -72,7 +72,7 @@
                             </li>
                             <li class="menu__item">
                                 <div class="menu__button">
-                                    <a href="#popup_ask" class="btn btn--white">Задать вопрос</a>
+                                    <a href="#popup_ask" class="btn btn--white popup-link">Задать вопрос</a>
                                 </div>
                             </li>
                         </ul>
@@ -144,7 +144,7 @@
         </div>
     </div>
 </header>
-        <section class="astrolog">
+        <section class="astrolog parallax">
     <div class="astrolog__body lock-padding">
         <div class="astrolog__container">
             <div class="wrapper-inner">
@@ -209,8 +209,8 @@
             </div>
         </div>
     </div>
-
 </section>
+
 <div class="gradient__bottom">
     <div class="gradient__bottom-body"></div>
 </div>
@@ -965,248 +965,280 @@
     </div>
 </footer>
     </div>
-    <div class="poppp lock-margin">
-    <div id="popup_ask" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_ask</div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_cosult" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_cosult</div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <!-- ================================ -->
-    <div id="popup_10" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_10 Рыбы</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_10.svg" alt="знак зодиака Рыбы">
+    <div id="popup_ask" class="popup popup-ask">
+    <div class="popup__body">
+        <div class="popup__content popup-ask__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">Задать вопрос</div>
+            <!-- <div class="popup__text"></div> -->
+            <div class="popup-form">
+                <form action="#" class="form-ask" id="ask-form">
+                    <div class="form-ask__body">
+                        <div class="form-item">
+                            <label class="form-label" for="ask__your-name">Имя*</label>
+                            <input class="ask-input" type="text" required id="ask__your-name" name="askYourName">
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="ask__your-mail">E-mail*</label>
+                            <input class="ask-input" type="email" required id="ask__your-mail" name="askYourMail">
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="ask__your-ask">Ваш вопрос</label>
+                            <textarea class="ask-input" name="askYourAsk" id="ask__your-ask"></textarea>
+                        </div>
+                        <div class="form-item">
+                            <!-- <input type="reset" value="сбросить">
+                            <input type="submit" value="отправить"> -->
+                            <button type="submit">отправить</button>
+                            <button type="reset">сбросить</button>
+                        </div>
+                        <div class="form-item">
+                            <div class="checkbox">
+                                <input type="checkbox" name="agreement" checked id="formAgreement"
+                                    class="checkbox-input">
+                                <label class="form-label__checkbox" for="formAgreement">
+                                    <span>
+                                        Я даю свое согласие на обработку персоональны данных в соответствии с
+                                        <a href="#">Условиями</a>*
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item-horoscope__text">Рыбы</div>
-                    <div class="item-horoscope__date">19.02 — 20.03</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_3" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_3 Овен</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_3.svg" alt="знак зодиака Овен">
-                    </div>
-                    <div class="item-horoscope__text">Овен</div>
-                    <div class="item-horoscope__date">21.03 — 19.04</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_7" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_7 Водолей</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_7.svg" alt="знак зодиака Водолей">
-                    </div>
-                    <div class="item-horoscope__text">Водолей</div>
-                    <div class="item-horoscope__date">20.01 — 18.02</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_6" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_6 Телец</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_6.svg" alt="знак зодиака Телец">
-                    </div>
-                    <div class="item-horoscope__text">Телец</div>
-                    <div class="item-horoscope__date">20.04 — 20.05</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_4" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_4 Козерог</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_4.svg" alt="знак зодиака Козерог">
-                    </div>
-                    <div class="item-horoscope__text">Козерог</div>
-                    <div class="item-horoscope__date">22.12 — 19.01</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_9" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_9 Близнецы</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_9.svg" alt="знак зодиака Близнецы">
-                    </div>
-                    <div class="item-horoscope__text">Близнецы</div>
-                    <div class="item-horoscope__date">21.05 — 20.06</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_12" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_12 Рак</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_12.svg" alt="знак зодиака Рак">
-                    </div>
-                    <div class="item-horoscope__text">Рак</div>
-                    <div class="item-horoscope__date">21.06 — 22.07</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_1" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_1 Стрелец</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_1.svg" alt="знак зодиака Стрелец">
-                    </div>
-                    <div class="item-horoscope__text">Стрелец</div>
-                    <div class="item-horoscope__date">22.11 — 21.12</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_2" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_2 Лев</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_2.svg" alt="знак зодиака Лев">
-                    </div>
-                    <div class="item-horoscope__text">Лев</div>
-                    <div class="item-horoscope__date">23.07 — 22.08</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_11" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_11 Скорпион</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_11.svg" alt="знак зодиака Скорпион">
-                    </div>
-                    <div class="item-horoscope__text">Скорпион</div>
-                    <div class="item-horoscope__date">23.10 — 21.11</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_5" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_5 Дева</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_5.svg" alt="знак зодиака Дева">
-                    </div>
-                    <div class="item-horoscope__text">Дева</div>
-                    <div class="item-horoscope__date">23.08 — 22.09</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
-            </div>
-        </div>
-    </div>
-    <div id="popup_8" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close popup__close--ative"><span></span></a>
-                <div class="popup__title">popup_8 Весы</div>
-                <div class="horoscope__column item-horoscope">
-                    <div class="item-horoscope__image">
-                        <img src="img/bg/horosc/horosc_8.svg" alt="знак зодиака Весы">
-                    </div>
-                    <div class="item-horoscope__text">Весы</div>
-                    <div class="item-horoscope__date">23.09 — 22.10</div>
-                </div>
-                <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
-                    Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
-                    non commodi minus sint odit ducimus quos amet.</div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-    <script src="js/app.min.js?_v=20220407001150"></script>
+<div id="popup_cosult" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_cosult</div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<!-- ================================ -->
+<div id="popup_10" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_10 Рыбы</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_10.svg" alt="знак зодиака Рыбы">
+                </div>
+                <div class="item-horoscope__text">Рыбы</div>
+                <div class="item-horoscope__date">19.02 — 20.03</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_3" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_3 Овен</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_3.svg" alt="знак зодиака Овен">
+                </div>
+                <div class="item-horoscope__text">Овен</div>
+                <div class="item-horoscope__date">21.03 — 19.04</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_7" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_7 Водолей</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_7.svg" alt="знак зодиака Водолей">
+                </div>
+                <div class="item-horoscope__text">Водолей</div>
+                <div class="item-horoscope__date">20.01 — 18.02</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_6" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_6 Телец</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_6.svg" alt="знак зодиака Телец">
+                </div>
+                <div class="item-horoscope__text">Телец</div>
+                <div class="item-horoscope__date">20.04 — 20.05</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_4" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_4 Козерог</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_4.svg" alt="знак зодиака Козерог">
+                </div>
+                <div class="item-horoscope__text">Козерог</div>
+                <div class="item-horoscope__date">22.12 — 19.01</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_9" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_9 Близнецы</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_9.svg" alt="знак зодиака Близнецы">
+                </div>
+                <div class="item-horoscope__text">Близнецы</div>
+                <div class="item-horoscope__date">21.05 — 20.06</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_12" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_12 Рак</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_12.svg" alt="знак зодиака Рак">
+                </div>
+                <div class="item-horoscope__text">Рак</div>
+                <div class="item-horoscope__date">21.06 — 22.07</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_1" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_1 Стрелец</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_1.svg" alt="знак зодиака Стрелец">
+                </div>
+                <div class="item-horoscope__text">Стрелец</div>
+                <div class="item-horoscope__date">22.11 — 21.12</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_2" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_2 Лев</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_2.svg" alt="знак зодиака Лев">
+                </div>
+                <div class="item-horoscope__text">Лев</div>
+                <div class="item-horoscope__date">23.07 — 22.08</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_11" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_11 Скорпион</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_11.svg" alt="знак зодиака Скорпион">
+                </div>
+                <div class="item-horoscope__text">Скорпион</div>
+                <div class="item-horoscope__date">23.10 — 21.11</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_5" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_5 Дева</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_5.svg" alt="знак зодиака Дева">
+                </div>
+                <div class="item-horoscope__text">Дева</div>
+                <div class="item-horoscope__date">23.08 — 22.09</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+<div id="popup_8" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close popup__close--ative"><span></span></a>
+            <div class="popup__title">popup_8 Весы</div>
+            <div class="horoscope__column item-horoscope">
+                <div class="item-horoscope__image">
+                    <img src="img/bg/horosc/horosc_8.svg" alt="знак зодиака Весы">
+                </div>
+                <div class="item-horoscope__text">Весы</div>
+                <div class="item-horoscope__date">23.09 — 22.10</div>
+            </div>
+            <div class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, et?
+                Excepturi laborum vel quis reiciendis explicabo doloremque similique at, placeat, eaque consectetur
+                non commodi minus sint odit ducimus quos amet.</div>
+        </div>
+    </div>
+</div>
+    <script src="js/app.min.js?_v=20220413014001"></script>
 </body>
 
 </html>
